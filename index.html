@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบ Login</title>
+    <!-- Google Fonts: Inter & Prompt (Thai) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Animated Gradient Shapes -->
+    <div class="background-decorations">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <h1 id="header-title" class="header-logo">
+                <i class="fa-solid fa-shield-halved logo-icon"></i>
+                <span>ระบบ Login</span>
+            </h1>
+        </header>
+
+        <!-- Central Landing Area -->
+        <main class="main-content">
+            <div class="hero-card">
+                <div class="hero-icon-wrapper">
+                    <i class="fa-solid fa-lock-open hero-lock-icon"></i>
+                </div>
+                <h2>ยินดีต้อนรับสู่ระบบวางแผนการตลาด</h2>
+                <p>กรุณาลงชื่อเข้าใช้งานระบบเพื่อเข้าถึง Hanae Marketing Planner</p>
+                <button id="open-login-btn" class="btn btn-primary btn-lg pulse-effect">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span>ลงชื่อเข้าใช้</span>
+                </button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2026 Hanae Marketing. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Login Modal Popup -->
+    <div id="login-modal" class="modal-backdrop">
+        <div class="modal-container">
+            <button id="close-modal-btn" class="modal-close-btn" aria-label="ปิด">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="modal-header">
+                <div class="modal-logo">
+                    <i class="fa-solid fa-user-lock"></i>
+                </div>
+                <h3>เข้าสู่ระบบ</h3>
+                <p>ระบุข้อมูลประจำตัวของคุณเพื่อดำเนินการต่อ</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="login-form" autocomplete="off" onsubmit="return false;">
+                <!-- Error Alert Box -->
+                <div id="error-alert" class="alert alert-danger hidden">
+                    <i class="fa-solid fa-circle-exclamation alert-icon"></i>
+                    <span id="error-message">ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง</span>
+                </div>
+
+                <!-- Username Field -->
+                <div class="form-group">
+                    <label for="username">ชื่อผู้ใช้</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-user input-icon"></i>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            placeholder="กรอกชื่อผู้ใช้ของคุณ" 
+                            required
+                        >
+                    </div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password">รหัสผ่าน</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-key input-icon"></i>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="กรอกรหัสผ่านของคุณ" 
+                            required
+                        >
+                        <button type="button" id="toggle-password-btn" class="toggle-password-visibility" aria-label="แสดงรหัสผ่าน">
+                            <i class="fa-solid fa-eye" id="password-eye-icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submit-login-btn" class="btn btn-primary btn-block">
+                    <span id="btn-text">Login</span>
+                    <div id="btn-spinner" class="spinner hidden"></div>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Application Script -->
+    <script src="app.js"></script>
+</body>
+</html>
