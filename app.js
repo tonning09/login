@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toastContainer = document.getElementById('toast-container');
 
     const GOOGLE_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1iSHsm7-yEJaXzjYnLz8LX71C2OCr4TCa4o1JsFW2qq0/gviz/tq?tqx=out:json';
-    const REDIRECT_URL = 'https://hanae-marketing-planner-815054619043.asia-southeast1.run.app';
+    const REDIRECT_URL = 'https://hanae-database.web.app/';
 
     // 1. Modal Toggle Handlers
     const openModal = () => {
